@@ -23,6 +23,9 @@ body {
   justify-content: center;
   margin: auto;
 }
+.cont > * {
+  min-width: 250px;
+}
 
 #chat {
   width: 50%;
@@ -34,6 +37,11 @@ body {
   gap: 30px;
   overflow: auto;
   padding: 20px 20px 35px;
+  border: 1px solid rgb(246, 246, 246);
+  border-bottom: 0;
+}
+#chat > *:first-child {
+  margin-top: auto !important;
 }
 
 form {
@@ -140,5 +148,13 @@ input[type=submit] {
   }
   100% {
     scale: 1;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cont {
+    height: 100dvh;
+  }
+  .cont > * {
+    width: 100% !important;
   }
 }/*# sourceMappingURL=style.css.map */

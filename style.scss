@@ -28,6 +28,10 @@ body {
 	align-items: center;
 	justify-content: center;
 	margin: auto;
+
+	& > * {
+		min-width: 250px;
+	}
 }
 
 #chat {
@@ -40,6 +44,12 @@ body {
 	gap: 30px;
 	overflow: auto;
 	padding: 20px 20px calc(20px + $msg-box);
+	border: 1px solid rgb(246, 246, 246);
+	border-bottom: 0;
+
+	& > *:first-child{
+		margin-top: auto !important;
+	}
 }
 
 form {
@@ -48,7 +58,7 @@ form {
 	border: 1px solid $white;
 	border-radius: 0px 0px 7px 7px;
 
-	& > *:focus{
+	& > *:focus {
 		outline: none;
 	}
 }
@@ -120,7 +130,7 @@ input[type="submit"] {
 	}
 }
 
-.friend{
+.friend {
 	align-self: flex-start;
 	color: $white;
 	background-color: $main;
@@ -137,20 +147,28 @@ input[type="submit"] {
 	}
 }
 
-.animate{
-	animation: popIn .10s linear;
+.animate {
+	animation: popIn 0.1s linear;
 }
 
-.animateF{
-	animation: popIn .10s linear;
+.animateF {
+	animation: popIn 0.1s linear;
 }
-
 
 @keyframes popIn {
-	0%{
+	0% {
 		scale: 0;
 	}
-	100%{
+	100% {
 		scale: 1;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.cont {
+		height: 100dvh;
+		& > * {
+			width: 100% !important;
+		}
 	}
 }

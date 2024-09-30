@@ -1,0 +1,156 @@
+$white: rgb(246, 246, 246);
+$box-width: 50%;
+$msg-box: 15px;
+$chat: rgb(54, 54, 54);
+$main: rgb(18, 18, 18);
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $main;
+	width: 100vw;
+	max-height: 100vw;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.cont {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	height: 90vh;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+}
+
+#chat {
+	width: $box-width;
+	flex-grow: 1;
+	background-color: $chat;
+	border-radius: 17px 17px 0px 0px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	overflow: auto;
+	padding: 20px 20px calc(20px + $msg-box);
+}
+
+form {
+	display: flex;
+	width: $box-width;
+	border: 1px solid $white;
+	border-radius: 0px 0px 7px 7px;
+
+	& > *:focus{
+		outline: none;
+	}
+}
+
+input,
+.msg {
+	flex-grow: 1;
+	color: $white;
+	background-color: rgb(85, 85, 85);
+	border: none;
+}
+
+input[type="submit"] {
+	border-left: 1px solid $white;
+	border-radius: 0 0 7px 0px;
+	background-color: rgb(62, 62, 62);
+	cursor: pointer;
+}
+
+.msg {
+	width: 90%;
+	padding: 10px;
+	height: fit-content;
+	min-height: 30px;
+	border-radius: 0 0 0px 7px;
+	resize: none;
+}
+
+.message {
+	margin: 0;
+	border-radius: 7px !important;
+	padding: 10px 15px;
+	max-width: 80%;
+	width: fit-content;
+	min-width: 100px;
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		width: calc($msg-box + 2px);
+		height: $msg-box;
+		bottom: -$msg-box;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		border: $msg-box solid transparent;
+		bottom: -$msg-box;
+		border-bottom: none;
+	}
+}
+
+.myMsg {
+	align-self: flex-end;
+	background-color: $white;
+	color: $main;
+	transform-origin: bottom right;
+
+	&:after {
+		background-color: $chat;
+		right: calc(-1 * $msg-box + 5px);
+	}
+
+	&:before {
+		border-top: $msg-box solid $white;
+		right: calc(-1 * $msg-box + 5px);
+	}
+}
+
+.friend{
+	align-self: flex-start;
+	color: $white;
+	background-color: $main;
+	transform-origin: bottom left;
+
+	&:after {
+		background-color: $chat;
+		left: calc(-1 * $msg-box + 5px);
+	}
+
+	&:before {
+		border-top: $msg-box solid $main;
+		left: calc(-1 * $msg-box + 5px);
+	}
+}
+
+.animate{
+	animation: popIn .10s linear;
+}
+
+.animateF{
+	animation: popIn .10s linear;
+}
+
+
+@keyframes popIn {
+	0%{
+		scale: 0;
+	}
+	100%{
+		scale: 1;
+	}
+}

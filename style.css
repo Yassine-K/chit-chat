@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(18, 18, 18);
+  width: 100vw;
+  max-height: 100vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 90vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#chat {
+  width: 50%;
+  flex-grow: 1;
+  background-color: rgb(54, 54, 54);
+  border-radius: 17px 17px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: auto;
+  padding: 20px 20px 35px;
+}
+
+form {
+  display: flex;
+  width: 50%;
+  border: 1px solid rgb(246, 246, 246);
+  border-radius: 0px 0px 7px 7px;
+}
+form > *:focus {
+  outline: none;
+}
+
+input,
+.msg {
+  flex-grow: 1;
+  color: rgb(246, 246, 246);
+  background-color: rgb(85, 85, 85);
+  border: none;
+}
+
+input[type=submit] {
+  border-left: 1px solid rgb(246, 246, 246);
+  border-radius: 0 0 7px 0px;
+  background-color: rgb(62, 62, 62);
+  cursor: pointer;
+}
+
+.msg {
+  width: 90%;
+  padding: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 30px;
+  border-radius: 0 0 0px 7px;
+  resize: none;
+}
+
+.message {
+  margin: 0;
+  border-radius: 7px !important;
+  padding: 10px 15px;
+  max-width: 80%;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 100px;
+  position: relative;
+}
+.message:after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 15px;
+  bottom: -15px;
+}
+.message:before {
+  content: "";
+  position: absolute;
+  border: 15px solid transparent;
+  bottom: -15px;
+  border-bottom: none;
+}
+
+.myMsg {
+  align-self: flex-end;
+  background-color: rgb(246, 246, 246);
+  color: rgb(18, 18, 18);
+  transform-origin: bottom right;
+}
+.myMsg:after {
+  background-color: rgb(54, 54, 54);
+  right: -10px;
+}
+.myMsg:before {
+  border-top: 15px solid rgb(246, 246, 246);
+  right: -10px;
+}
+
+.friend {
+  align-self: flex-start;
+  color: rgb(246, 246, 246);
+  background-color: rgb(18, 18, 18);
+  transform-origin: bottom left;
+}
+.friend:after {
+  background-color: rgb(54, 54, 54);
+  left: -10px;
+}
+.friend:before {
+  border-top: 15px solid rgb(18, 18, 18);
+  left: -10px;
+}
+
+.animate {
+  animation: popIn 0.1s linear;
+}
+
+.animateF {
+  animation: popIn 0.1s linear;
+}
+
+@keyframes popIn {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -11,7 +11,10 @@ socket.onopen = function(event) {
 
 socket.onmessage = function(event) {
 	const data = JSON.parse(event.data);
-	console.log('Message from server:', data.msg);
+	tmp = messenger.innerHTML.replace('animateF', '').replace('animate', '');
+	messenger.innerHTML = tmp + `<p class="message friend animateF">${data.content}</p>`
+	messenger.scrollTop = messenger.scrollHeight
+	console.log('Message from server:', data.content);
 };
 
 socket.onclose = function(event) {
